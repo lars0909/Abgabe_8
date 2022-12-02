@@ -1,0 +1,47 @@
+body{
+    background-color: #000000;
+}
+table{
+    margin: 0 auto;
+}
+button{
+    width: 150px;
+    height: 150px;
+}
+button{
+    border: 0px;
+}
+#one{
+    background-color: #0000ff;
+}
+#two{
+    background-color: #0000ff;
+}
+#three{
+    background-color: #0000ff;
+}
+#four{
+    background-color: #ff00ff;
+}
+#five{
+    background-color: #ff00ff;
+}
+#six{
+    background-color: #ff00ff;
+}
+#seven{
+    background-color: #ff00ff;
+}
+#eight{
+    background-color: #ff8800;
+}
+#nine{
+    background-color: #ff8800;
+}
+#pb{
+    text-align: center;
+}
+img{
+    height: 150px;
+    width: 150px;
+}
