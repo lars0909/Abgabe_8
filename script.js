@@ -8,6 +8,9 @@ var sechs = new Audio('./audio/F.mp3');
 var sieben = new Audio('./audio/G.mp3');
 var acht = new Audio('./audio/laugh-1.mp3');
 var neun = new Audio('./audio/laugh-2.mp3');
+//var Teil B
+var audio = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"];
+var count = 0;
 function test(text, eins) {
     console.log(text);
     eins.play();
@@ -40,20 +43,21 @@ document.querySelector("#nine").addEventListener(`click`, function () {
     test("9", neun);
 });
 //teil B
-var audio = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"];
-var count = 0;
 function playbuttonpart1(text) {
     var beat = new Audio(text);
     beat.play();
 }
 function playbuttonpart2() {
-    playbuttonpart1(audio[count]);
-    count += 1;
-    console.log(count);
-    if (count > 5) {
-        count = 0;
-        console.log("count ist wieder null");
-    }
+    setInterval(function () {
+        playbuttonpart1(audio[count]);
+        count += 1;
+        console.log(count);
+        if (count > 4) {
+            count = 0;
+            console.log("0");
+            clearInterval; //wie stoppe ich den wieder?
+        }
+    }, 700);
 }
 document.querySelector("#pb").addEventListener(`click`, function () {
     playbuttonpart2();

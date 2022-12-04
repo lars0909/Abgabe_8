@@ -9,6 +9,10 @@ var sieben:HTMLAudioElement = new Audio('./audio/G.mp3');
 var acht:HTMLAudioElement = new Audio('./audio/laugh-1.mp3');
 var neun:HTMLAudioElement = new Audio('./audio/laugh-2.mp3');
 
+//var Teil B
+var audio: string [] = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"]; 
+var count: number = 0;
+
 function test (text, eins) :void{
     console.log(text); 
     eins.play();
@@ -45,21 +49,21 @@ document.querySelector("#nine").addEventListener(`click`, function(){
     test("9", neun);
 });
 //teil B
-var audio: string [] = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"]; 
-var count: number = 0;
-
 function playbuttonpart1 (text) :void{
     var beat : HTMLAudioElement = new Audio(text);
     beat.play();
 }
 function playbuttonpart2() : void{
+    setInterval(function(){
     playbuttonpart1(audio[count]);
     count +=1;
     console.log(count);
-    if(count > 5){
+    if(count > 4){
         count = 0;
-        console.log("count ist wieder null");
+        console.log("0");
+        clearInterval;      //wie stoppe ich den wieder?
     }
+    },700);
 }
 
 document.querySelector("#pb").addEventListener(`click`, function(){
