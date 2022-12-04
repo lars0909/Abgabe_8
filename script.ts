@@ -61,7 +61,7 @@ function playbuttonpart2() : void{
     if(count > 4){
         count = 0;
         console.log("0");
-        clearInterval;      //wie stoppe ich den wieder?
+        clearInterval;      //wie stoppe ich den intervall wieder?
     }
     },700);
 }
