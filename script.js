@@ -39,4 +39,23 @@ document.querySelector("#eight").addEventListener(`click`, function () {
 document.querySelector("#nine").addEventListener(`click`, function () {
     test("9", neun);
 });
+//teil B
+var audio = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"];
+var count = 0;
+function playbuttonpart1(text) {
+    var beat = new Audio(text);
+    beat.play();
+}
+function playbuttonpart2() {
+    playbuttonpart1(audio[count]);
+    count += 1;
+    console.log(count);
+    if (count > 5) {
+        count = 0;
+        console.log("count ist wieder null");
+    }
+}
+document.querySelector("#pb").addEventListener(`click`, function () {
+    playbuttonpart2();
+});
 //# sourceMappingURL=script.js.map
