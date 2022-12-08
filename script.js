@@ -1,46 +1,33 @@
 var text;
-var eins = new Audio('./audio/snare.mp3');
-var zwei = new Audio('./audio/hihat.mp3');
-var drei = new Audio('./audio/kick.mp3');
-var vier = new Audio('./audio/A.mp3');
-var fuenf = new Audio('./audio/C.mp3');
-var sechs = new Audio('./audio/F.mp3');
-var sieben = new Audio('./audio/G.mp3');
-var acht = new Audio('./audio/laugh-1.mp3');
-var neun = new Audio('./audio/laugh-2.mp3');
-//var Teil B
-var audio = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", "./audio/hihat.mp3", "./audio/kick.mp3"];
+var audio = [('./audio/snare.mp3'), "./audio/hihat.mp3", "/audio/kick.mp3", './audio/A.mp3', './audio/C.mp3', './audio/F.mp3', './audio/G.mp3', './audio/laugh-1.mp3', './audio/laugh-2.mp3'];
 var count = 0;
-function test(text, eins) {
-    console.log(text);
-    eins.play();
-}
+let intervalid;
 document.querySelector("#one").addEventListener(`click`, function () {
-    test("1", eins);
+    playbuttonpart1(audio[0]);
 });
 document.querySelector("#two").addEventListener(`click`, function () {
-    test("2", zwei);
+    playbuttonpart1(audio[1]);
 });
 document.querySelector("#three").addEventListener(`click`, function () {
-    test("3", drei);
+    playbuttonpart1(audio[2]);
 });
 document.querySelector("#four").addEventListener(`click`, function () {
-    test("4", vier);
+    playbuttonpart1(audio[3]);
 });
 document.querySelector("#five").addEventListener(`click`, function () {
-    test("5", fuenf);
+    playbuttonpart1(audio[4]);
 });
 document.querySelector("#six").addEventListener(`click`, function () {
-    test("6", sechs);
+    playbuttonpart1(audio[5]);
 });
 document.querySelector("#seven").addEventListener(`click`, function () {
-    test("7", sieben);
+    playbuttonpart1(6);
 });
 document.querySelector("#eight").addEventListener(`click`, function () {
-    test("8", acht);
+    playbuttonpart1(7);
 });
 document.querySelector("#nine").addEventListener(`click`, function () {
-    test("9", neun);
+    playbuttonpart1(8);
 });
 //teil B
 function playbuttonpart1(text) {
@@ -48,16 +35,15 @@ function playbuttonpart1(text) {
     beat.play();
 }
 function playbuttonpart2() {
-    setInterval(function () {
+    intervalid = setInterval(function () {
         playbuttonpart1(audio[count]);
         count += 1;
         console.log(count);
         if (count > 4) {
             count = 0;
             console.log("0");
-            clearInterval; //wie stoppe ich den intervall wieder?
         }
-    }, 700);
+    }, 500);
 }
 document.querySelector("#pb").addEventListener(`click`, function () {
     playbuttonpart2();
