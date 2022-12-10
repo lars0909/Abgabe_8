@@ -65,7 +65,6 @@ function playbuttonpart2() : void{
     }
     },500);
 }
-//button schwitches appearence
 const button = document.getElementById("button")
 function switchAppearance(){
     if (button.classList.contains("fa-play")) {
@@ -81,4 +80,15 @@ function switchAppearance(){
 }
 document.querySelector("#pb").addEventListener(`click`, function(){
     switchAppearance();
+})
+function remix(){
+    setInterval(function(){
+        const rdm = Math.floor(Math.random() * audio.length);
+        console.log(rdm);
+        playbuttonpart1(audio[rdm]);
+        console.log("test-rmx-fnc")
+    },500);
+}
+document.querySelector("#remix").addEventListener(`click`,function(){
+    console.log("test-rmx-btn");
 })
