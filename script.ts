@@ -2,6 +2,7 @@ var text: string;
 var audio: string [] = [('./audio/snare.mp3'), ("./audio/hihat.mp3"), ("/audio/kick.mp3"), ('./audio/A.mp3'), ('./audio/C.mp3'), ('./audio/F.mp3'), ('./audio/G.mp3'), ('./audio/laugh-1.mp3'), ('./audio/laugh-2.mp3')]; 
 var count: number = 0;
 let intervalid: number;
+let intervalId2: number;
 
 document.querySelector("#one").addEventListener(`click`, function(){
     playbuttonpart1(audio[0]);
@@ -65,7 +66,7 @@ function playbuttonpart2() : void{
     }
     },500);
 }
-const button = document.getElementById("button")
+const button = document.getElementById("button");
 function switchAppearance(){
     if (button.classList.contains("fa-play")) {
         button.classList.remove("fa-play");
@@ -82,13 +83,14 @@ document.querySelector("#pb").addEventListener(`click`, function(){
     switchAppearance();
 })
 function remix(){
-    setInterval(function(){
+    intervalId2 = setInterval(function(){
         const rdm = Math.floor(Math.random() * audio.length);
         console.log(rdm);
         playbuttonpart1(audio[rdm]);
-        console.log("test-rmx-fnc")
+        console.log("test-rmx-fnc");
     },500);
 }
 document.querySelector("#remix").addEventListener(`click`,function(){
     console.log("test-rmx-btn");
+    remix();
 })
