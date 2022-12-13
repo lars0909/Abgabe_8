@@ -2,6 +2,7 @@ var text;
 var audio = [('./audio/snare.mp3'), ("./audio/hihat.mp3"), ("/audio/kick.mp3"), ('./audio/A.mp3'), ('./audio/C.mp3'), ('./audio/F.mp3'), ('./audio/G.mp3'), ('./audio/laugh-1.mp3'), ('./audio/laugh-2.mp3')];
 var count = 0;
 let intervalid;
+let intervalId2;
 document.querySelector("#one").addEventListener(`click`, function () {
     playbuttonpart1(audio[0]);
     console.log("pad1");
@@ -72,15 +73,29 @@ document.querySelector("#pb").addEventListener(`click`, function () {
     switchAppearance();
 });
 function remix() {
-    setInterval(function () {
+    intervalId2 = setInterval(function () {
         const rdm = Math.floor(Math.random() * audio.length);
         console.log(rdm);
         playbuttonpart1(audio[rdm]);
         console.log("test-rmx-fnc");
     }, 500);
 }
+const remixer = document.getElementById("remix");
+function switchAppearance2() {
+    if (remixer.classList.contains("on")) {
+        remixer.classList.remove("on");
+        remixer.classList.add("off");
+        remix();
+        console.log("hilfe");
+    }
+    else {
+        remixer.classList.remove("off");
+        remixer.classList.add("on");
+        clearInterval(intervalId2);
+    }
+}
 document.querySelector("#remix").addEventListener(`click`, function () {
     console.log("test-rmx-btn");
-    remix();
+    switchAppearance2();
 });
 //# sourceMappingURL=script.js.map

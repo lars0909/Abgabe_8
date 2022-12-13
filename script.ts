@@ -90,7 +90,24 @@ function remix(){
         console.log("test-rmx-fnc");
     },500);
 }
+
+const remixer = document.getElementById("remix");
+
+function switchAppearance2(){
+    if (remixer.classList.contains("on")) {
+        remixer.classList.remove("on");
+        remixer.classList.add("off");
+        remix();
+        console.log("hilfe");
+        
+      }
+      else {
+        remixer.classList.remove("off");
+        remixer.classList.add("on");
+        clearInterval(intervalId2);
+      }    
+}
 document.querySelector("#remix").addEventListener(`click`,function(){
     console.log("test-rmx-btn");
-    remix();
+    switchAppearance2();
 })
